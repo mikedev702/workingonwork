@@ -32,11 +32,14 @@ for t in things:
     
     print(f'{bcolors.OKBLUE}{t} {bcolors.ENDC}')
     x = 0
-    while(x<10):
+    while(x<4):
         x = x + 1
         verb = random.choice(verbs)
         noun = random.choice(nouns)
         print(f'{verb} {noun} ...')
         for i in tqdm(range(randint(1,20))):
-            sleep(3)
+            sleep(1)
         sleep(5)
+        passfail = ['pass', 'fail']
+
+        print(f'{bcolors.WARNING} {random.choice(passfail)}{bcolors.ENDC} ')
