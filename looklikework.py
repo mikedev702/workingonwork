@@ -2,6 +2,7 @@ import os
 from time import sleep
 from tqdm import tqdm
 from random import *
+import random
 #Colors
 class bcolors:
     HEADER = '\033[95m'
@@ -23,7 +24,9 @@ things = [
 "e-enable value-added dark web",
 "aggregate sticky users",
 "repurpose bleeding-edge SaaS"
-        ]
+]
+verbs = ['aggregate', 'benchmark', 'deploy', 'extend', 'implement']
+nouns = ['Database','Container', 'Virtual Machine', 'Data', 'Network']
 
 for t in things:
     
@@ -31,7 +34,9 @@ for t in things:
     x = 0
     while(x<10):
         x = x + 1
-        print('Setup...')
+        verb = random.choice(verbs)
+        noun = random.choice(nouns)
+        print(f'{verb} {noun} ...')
         for i in tqdm(range(randint(1,20))):
             sleep(3)
         sleep(5)
