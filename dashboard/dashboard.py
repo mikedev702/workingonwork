@@ -1,16 +1,17 @@
 import datetime
 
 import dash
-from dash import dcc, html
+from dash import dcc, html, dash_table
 import plotly
 from dash.dependencies import Input, Output
 from random import *
 import psutil
-# pip install pyorbital
+from collections import Counter
+import pandas as pd
 import csv
 from pyorbital.orbital import Orbital
 #satellite = Orbital('TERRA')
-
+df = pd.read_csv('../work.csv')
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -19,10 +20,18 @@ app.layout = html.Div(
         html.H4('Innovation Live Feed'),
         html.Div(id='live-update-text'),
         dcc.Graph(id='live-update-graph'),
-        dcc.Graph(id='live-install-graph'),
+        html.Div([
+        dash_table.DataTable(id='live-install-data',
+         columns=[
+            {"name": i, "id": i, "deletable": True, "selectable": True, "hideable": True}
+            for i in df.columns
+        ],
+        data=df.to_dict('records'), 
+        ),
+        ]),
         dcc.Interval(
             id='interval-component',
-            interval=1*5000, # in milliseconds
+            interval=1*10000, # in milliseconds
             n_intervals=0
         )
 
@@ -41,39 +50,11 @@ def update_metrics(n):
         html.Span('interfaces: {0:0.2f}'.format(alt), style=style)
     ]
 
-@app.callback(Output('live-install-graph', 'figure'),
+@app.callback(Output('live-install-data', 'data'),
               Input('interval-component', 'n_intervals'))
-def update_install_live(n):
-    data = {
-        'time': [],
-        'totalPass': [],
-        'totalFail':[],
-        'total': []
-    }
-    #Collect Data
-    with open('../work.csv', mode = 'r')as file:
-        csvFile = csv.reader(file)
-        data['total'].append(len(list(csvFile)) - 1)
-        file.close()
-    
-    data['time'].append(datetime.datetime.now())
-
-    fig = plotly.tools.make_subplots(rows=1, cols=1, vertical_spacing=0.2)
-    fig['layout']['margin'] = {
-        'l': 30, 'r': 10, 'b': 30, 't': 10
-    }
-    fig['layout']['legend'] = {'x': 0, 'y': 1, 'xanchor': 'left'}
-
-    fig.append_trace({
-        'x': data['time'],
-        'y': data['total'],
-        'text': data['time'],
-        'name': 'Total Processed',
-        'mode': 'lines+markers',
-        'type': 'scatter'
-    }, 1, 1)
-
-    return fig
+def update_install_live(n, maxrows=10):
+    df = pd.read_csv('../work.csv')
+    return df.to_dict('records')
 
 # Multiple components can update everytime interval gets fired.
 @app.callback(Output('live-update-graph', 'figure'),
