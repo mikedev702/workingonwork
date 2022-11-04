@@ -1,0 +1,74 @@
+nohup: ignoring input
+ * Serving Flask app 'bullshitapi'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [04/Nov/2022 19:32:33] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:32:33] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:32:33] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:32:46] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:32:46] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:07] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:07] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:20] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:20] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:41] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:41] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:41] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:50] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:33:50] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:46:28] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:46:28] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:46:28] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:46:39] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:46:39] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:00] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:00] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:18] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:18] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:43] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:43] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:47:43] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:07] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:07] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:16] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:16] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:24] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:24] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:36] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:36] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:37] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:43] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:43] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:56] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:48:56] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:49:18] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:49:18] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:49:42] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:49:42] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:49:42] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:01] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:01] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:22] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:22] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:43] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:50:43] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:07] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:07] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:07] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:20] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:20] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:33] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:33] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:47] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:51:47] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:07] "GET /tech HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:07] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:07] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:25] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:25] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:50] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:52:50] "GET /tech/noun HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:53:04] "GET /tech/verb HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2022 19:53:04] "GET /tech/noun HTTP/1.1" 200 -

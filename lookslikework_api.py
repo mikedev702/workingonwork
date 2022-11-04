@@ -4,7 +4,7 @@ from tqdm import tqdm
 from random import *
 import random
 import requests
-
+import csv
 
 # Colors
 class BColors:
@@ -17,13 +17,20 @@ class BColors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def updateCSV(data,csv_file):
+    with open(csv_file, 'a', newline='') as f_object:
+        writer_object = csv.writer(f_object)
+        writer_object.writerow(data)
+        f_object.close()
+
+
 
 # print(f'Successfully downloaded {BColors.OKGREEN}hello {BColors.ENDC} to {format}')
 os.system('clear')
 
 working = "not working"
 passfail = ['pass', 'fail']
-
+CSVDetails = ['Name', ]
 while working != "working":
     tech = requests.get('http://127.0.0.1:5000/tech')
     t = tech.json()
@@ -41,8 +48,12 @@ while working != "working":
         
         if(random.choice(passfail) == 'pass'):
             print(f'{BColors.OKGREEN} PASS {BColors.ENDC} ')
+            list_data = ['PASS', verb["verb"] + " " + noun["noun"] , t["quote"]]
+            updateCSV(list_data, 'work.csv')
         else:
             print(f'{BColors.FAIL} FAIL {BColors.ENDC} ')
+            list_data = ['FAIL', verb["verb"] + " " + noun["noun"] , t["quote"]]
+            updateCSV(list_data, 'work.csv')
 
 
         

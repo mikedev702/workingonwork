@@ -7,6 +7,7 @@ from dash.dependencies import Input, Output
 from random import *
 import psutil
 # pip install pyorbital
+import csv
 from pyorbital.orbital import Orbital
 #satellite = Orbital('TERRA')
 
@@ -18,11 +19,13 @@ app.layout = html.Div(
         html.H4('Innovation Live Feed'),
         html.Div(id='live-update-text'),
         dcc.Graph(id='live-update-graph'),
+        dcc.Graph(id='live-install-graph'),
         dcc.Interval(
             id='interval-component',
             interval=1*5000, # in milliseconds
             n_intervals=0
         )
+
     ])
 )
 
@@ -38,6 +41,39 @@ def update_metrics(n):
         html.Span('interfaces: {0:0.2f}'.format(alt), style=style)
     ]
 
+@app.callback(Output('live-install-graph', 'figure'),
+              Input('interval-component', 'n_intervals'))
+def update_install_live(n):
+    data = {
+        'time': [],
+        'totalPass': [],
+        'totalFail':[],
+        'total': []
+    }
+    #Collect Data
+    with open('../work.csv', mode = 'r')as file:
+        csvFile = csv.reader(file)
+        data['total'].append(len(list(csvFile)) - 1)
+        file.close()
+    
+    data['time'].append(datetime.datetime.now())
+
+    fig = plotly.tools.make_subplots(rows=1, cols=1, vertical_spacing=0.2)
+    fig['layout']['margin'] = {
+        'l': 30, 'r': 10, 'b': 30, 't': 10
+    }
+    fig['layout']['legend'] = {'x': 0, 'y': 1, 'xanchor': 'left'}
+
+    fig.append_trace({
+        'x': data['time'],
+        'y': data['total'],
+        'text': data['time'],
+        'name': 'Total Processed',
+        'mode': 'lines+markers',
+        'type': 'scatter'
+    }, 1, 1)
+
+    return fig
 
 # Multiple components can update everytime interval gets fired.
 @app.callback(Output('live-update-graph', 'figure'),
